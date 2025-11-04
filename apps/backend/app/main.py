@@ -1,9 +1,18 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.routes import auth
+from app.database import Base, engine
 
-app = FastAPI(title="Arbitor API")
+# Crear las tablas si no existen
+Base.metadata.create_all(bind=engine)
 
-origins = ["http://localhost:3000"]
+app = FastAPI(title="ARBITOR API", version="1.0")
+
+# Configurar CORS (para permitir conexión con frontend)
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,6 +22,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Registrar rutas
+app.include_router(auth.router)
+
 @app.get("/")
 def root():
-    return {"message": "API de Arbitor funcionando correctamente 🚀"}
+    return {"message": "ARBITOR API funcionando correctamente 🚀"}

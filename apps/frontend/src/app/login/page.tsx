@@ -60,13 +60,13 @@ export default function LoginPage() {
                 {/* Bienvenida */}
                 <h2 className="text-[#f88846] text-lg font-semibold text-center mb-10">
                     Bienvenido a <span className="font-bold">ARBITOR</span><br />
-                    <span className="text-white text-sm font-normal">Tu asistente arbitral inteligente</span>
+                    <span className="text-[#f88846] text-sm font-normal">Tu asistente arbitral inteligente</span>
                 </h2>
 
                 {/* Formulario */}
                 <form
                     onSubmit={handleLogin}
-                    className="w-full flex flex-col space-y-6 text-white"
+                    className="w-full flex flex-col space-y-6 text-[#f88846]"
                 >
                     {/* Input DNI */}
                     <div className="flex items-center border-b border-[#f88846] py-2">
@@ -128,7 +128,7 @@ export default function LoginPage() {
                     {/* Botón de inicio */}
                     <button
                         type="submit"
-                        className="mt-4 border border-[#f88846] text-[#f88846] py-2 rounded-full font-semibold hover:bg-[#f88846] hover:text-white transition duration-300"
+                        className="mt-4 border border-[#f88846] text-[#f88846] py-2 rounded-full font-semibold hover:bg-[#f88846] hover:text-[#1a3a5f] transition duration-300"
                     >
                         Iniciar sesión
                     </button>
